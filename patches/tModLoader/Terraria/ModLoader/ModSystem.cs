@@ -360,6 +360,13 @@ public abstract partial class ModSystem : ModType
 		=> false;
 
 	/// <summary>
+	/// Use this to send <see cref="ModPacket"/>s to a connecting player, for syncing modded data not serialized in <see cref="NetSend(BinaryWriter)">NetSend</see> and <see cref="NetReceive(BinaryReader)">NetReceive</see>.
+	/// <br/> Called only on the server.
+	/// </summary>
+	/// <param name="playerIndex">The whoAmI of the connecting client </param>
+	public virtual void OnPlayerJoining(int playerIndex) { }
+
+	/// <summary>
 	/// Allows a mod to run code before a world is generated.
 	/// <br/>If you use this to initialize data used during worldgen, which you save on the world, also initialize it in <see cref="OnWorldLoad"/>.
 	/// </summary>

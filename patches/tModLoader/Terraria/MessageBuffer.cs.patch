@@ -195,6 +195,14 @@
  					if (Netplay.Connection.State == 3) {
  						Main.windSpeedCurrent = Main.windSpeedTarget;
  						Netplay.Connection.State = 4;
+@@ -757,6 +_,7 @@
+ 				Main.BestiaryTracker.OnPlayerJoining(whoAmI);
+ 				CreativePowerManager.Instance.SyncThingsToJoiningPlayer(whoAmI);
+ 				Main.PylonSystem.OnPlayerJoining(whoAmI);
++				SystemLoader.OnPlayerJoining(whoAmI);
+ 				break;
+ 			}
+ 			case 9:
 @@ -810,6 +_,10 @@
  					NetMessage.TrySendData(74, whoAmI, -1, NetworkText.FromLiteral(Main.player[whoAmI].name), Main.anglerQuest);
  					NetMessage.TrySendData(129, whoAmI);

@@ -513,4 +513,11 @@ public static partial class SystemLoader
 
 		return result;
 	}
+
+	internal static void OnPlayerJoining(int playerIndex)
+	{
+		foreach (var system in HookOnPlayerJoining.Enumerate()) {
+			system.OnPlayerJoining();
+		}
+	}
 }

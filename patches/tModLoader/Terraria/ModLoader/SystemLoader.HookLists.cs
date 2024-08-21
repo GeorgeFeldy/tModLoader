@@ -151,6 +151,8 @@ partial class SystemLoader
 
 	private static HookList HookHijackSendData = AddHook<Func<int, int, int, int, NetworkText, int, float, float, float, int, int, int, bool>>(s => s.HijackSendData);
 
+	private static HookList HookOnPlayerJoining = AddHook<Action<int>>(s => s.OnPlayerJoining);
+
 	internal static HookList HookNetSend = AddHook<Action<BinaryWriter>>(s => s.NetSend);
 	internal static HookList HookNetReceive = AddHook<Action<BinaryReader>>(s => s.NetReceive);
 }
